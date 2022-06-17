@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./Components/navbar";
+import Grid from "./Components/grid-img";
+import Hero from "./Components/hero";
+import Card from "./Components/Card";
+import data from "./data";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(){
+    let cardsProps = data.map(x => {
+        return <Card
+        key = {x.id}
+        x = {x}
+        />
+    })
+    return (
+        <div>
+            <Navbar />
+            <Grid />
+            <Hero />
+            <div className="card-container">
+                {cardsProps}
+            </div>
+        </div>
+    )
 }
-
-export default App;
+/*<Card 
+img="https://www.teamusa.org/-/media/USA_Triathlon/Images/Athletes/2020-Athlete-Headshots/2020-Nils-Athlete-Headshots/022820-katie-zaferes.jpg?mh=250&mw=150&hash=847BC14636A973C82E16E2DE5951F34F63FEFED1"
+rating={5.0}
+reviewCount={6}
+country="USA"
+title="Life Lessons with Katie Zaferes"
+price={136}
+/>
+<Card 
+img="https://www.teamusa.org/-/media/USA_Triathlon/Images/Athletes/2020-Athlete-Headshots/2020-Nils-Athlete-Headshots/022820-katie-zaferes.jpg?mh=250&mw=150&hash=847BC14636A973C82E16E2DE5951F34F63FEFED1"
+rating={5.0}
+reviewCount={6}
+country="USA"
+title="Life Lessons with Katie Zaferes"
+price={136}
+/>
+<Card 
+img="https://www.teamusa.org/-/media/USA_Triathlon/Images/Athletes/2020-Athlete-Headshots/2020-Nils-Athlete-Headshots/022820-katie-zaferes.jpg?mh=250&mw=150&hash=847BC14636A973C82E16E2DE5951F34F63FEFED1"
+rating={5.0}
+reviewCount={6}
+country="USA"
+title="Life Lessons with Katie Zaferes"
+price={136}
+/>*/
