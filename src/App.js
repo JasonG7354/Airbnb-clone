@@ -4,6 +4,7 @@ import Grid from "./Components/grid-img";
 import Hero from "./Components/hero";
 import Card from "./Components/Card";
 import data from "./data";
+import Footer from "./Components/Footer";
 
 export default function App(){
     let cardsProps = data.map(x => {
@@ -20,6 +21,7 @@ export default function App(){
             <div className="card-container">
                 {cardsProps}
             </div>
+            <Footer />
         </div>
     )
 }
